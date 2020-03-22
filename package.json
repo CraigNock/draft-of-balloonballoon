@@ -1,0 +1,43 @@
+{
+  "name": "where",
+  "version": "0.0.1",
+  "description": "Trial Project",
+  "main": "src/index.js",
+  "repository": "C:\\Users\\Geothax\\Desktop\\Thing",
+  "author": "Craig",
+  "private": false,
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "node": "^13.10.1",
+    "nodemon": "^2.0.2",
+    "pigeon-maps": "^0.15.0",
+    "pigeon-marker": "^0.3.4",
+    "pigeon-overlay": "^0.2.3",
+    "prop-types": "*",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.4.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "styled-components": "^5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start:server": "nodemon server/server.js"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
