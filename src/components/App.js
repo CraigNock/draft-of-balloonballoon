@@ -10,7 +10,9 @@ const App = () => {
     <>
       <GlobalStyles />
       <Homepage />
-      <p>app paragraph</p>
+      <p>* Weather Dashboard *</p>
+      <p>* Surroundings Dashboard *</p>
+      
     </>
   )
 }

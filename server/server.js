@@ -6,23 +6,23 @@ const morgan = require('morgan');
 
 const app = express();
 
-const PORT = 3000;
+const PORT = 3001;
 
 app.use(express.json());
 
 
 const darkGet = async (lat, long) => {
   try{
-    let darkData = await request(`https://api.darksky.net/forecast/***REMOVED***/${lat},${long}?units=ca&exclude=minutely,daily,alerts,flags`);
+    let darkData = await request(`https://api.darksky.net/forecast/***REMOVED***/${lat},${long}?units=si&exclude=minutely,daily,alerts,flags`);
     darkData = JSON.parse(darkData);
-    console.log('darkdata', darkData);
+    // console.log('darkdata', darkData);
     return darkData;
   } catch(err) {console.log('error', err)}
 }
 
 const conditionsHandle = async (req, res) => {
   let position = req.body.currentPosition;
-  console.log('position ',position);
+  // console.log('position ',position);
   let lat = position[0];
   let long = position[1];
   // let elevation = position.elevation;

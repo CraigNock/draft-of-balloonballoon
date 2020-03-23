@@ -1,18 +1,19 @@
 import React from 'react';
 // import styled from 'styled-components';
 
-// import {PositionContext} from './PositionContext';
-// const {position, elevation} = React.useContext(PositionContext);
+// import {ConditionsContext} from './ConditionsContext';
+// const { state, actions: changeConditions} = React.useContext(ConditionsContext);
+// const {windSpeed,windGust,windBearing,} = state
+
+//for basic wind using self formula: (windgust-windspeed)/2 + windspeed
 
 
+const getWind = (pos, changeConditions) => {
 
-
-const getWind = (pos) => {
-  console.log(pos);
   let currentPosition = [...pos];
-  console.log('wind', currentPosition);
+  console.log('wind pos', currentPosition);
 
-  fetch('http://localhost:3000/conditions', {
+  fetch('http://localhost:3001/conditions', {
     method: 'POST',
     headers: {
         "Content-Type": "application/json",
@@ -22,8 +23,10 @@ const getWind = (pos) => {
 })
     .then(data => data.json())
     .then(data => {
-      console.log('current conditions ', data.conditions.currently);
-      console.log('windSpeed ', data.conditions.currently.windSpeed)
+      // console.log('current conditions ', data.conditions.currently);
+      // console.log('windSpeed ', data.conditions.currently.windSpeed);
+      let currentConditions = data.conditions.currently;
+      changeConditions(currentConditions);
     });
 }
 

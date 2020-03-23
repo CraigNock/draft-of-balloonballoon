@@ -5,7 +5,8 @@ export const PositionContext = React.createContext(null);
 
 
 const initialState = {
-  position: [45.5, -73.59],
+  lat: 45.50,
+  long: -73.60,
   elevation: 850,
 };
 
@@ -14,7 +15,8 @@ const reducer = (state, action) => {
     case 'CHANGE-POSITION':
       return {
         ...state,
-        position: action.position,
+        lat: action.newlat,
+        long: action.newLong,
       };
     case 'CHANGE-ELEVATION':
       return {
@@ -32,11 +34,13 @@ const reducer = (state, action) => {
 export const PositionProvider = ({children}) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
-  const changePosition = (newPosition) => {
+  const changePosition = (newlat, newLong) => {
     dispatch({
       type: 'CHANGE-POSITION',
-      position: newPosition,
+      newlat: newlat,
+      newLong: newLong
     })
+    // console.log(newlat, newLong)
   };
 
   const changeElevation = (newElevation) => {
