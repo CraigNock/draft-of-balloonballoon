@@ -26,6 +26,7 @@ weather -darksky?
   -visibility?
 
 trail? (snapshot lnglat every minute?)
+use markers, deploy every 5 mins? clean up after x hours?
 
 daylight
 local time

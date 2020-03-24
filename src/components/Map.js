@@ -9,9 +9,7 @@ import Overlay from 'pigeon-overlay';
 import getWind from './Wind';
 
 import {PositionContext} from './PositionContext';
-import {ConditionsContext} from './ConditionsContext';
-// 
-
+import {ConditionsContext} from './ConditionsContext'; 
 
 
 const provider = (x, y, z, dpr) =>  {
@@ -22,7 +20,6 @@ const StamenAttribution = () => (
     Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.
   </span>
 )
-
 
 
 const MapMap = () => {
@@ -38,7 +35,7 @@ const MapMap = () => {
     let posInt = setInterval(()=>{
       setFocus(n => n + 0.00001);
       // console.log(focus);
-    }, 60000);
+    }, 600000);
     return () => clearInterval(posInt);
     // eslint-disable-next-line
   }, []);
@@ -75,8 +72,6 @@ const MapMap = () => {
     <MapWrap>
       <Map
       center={[lat, long]}
-      // center={[focus]}
-      // center={[45.5, focus]}
       defaultZoom={13}
       minZoom={5}
       maxZoom={13}//12
@@ -92,8 +87,6 @@ const MapMap = () => {
       >
         <Overlay 
         anchor={[lat, long]} 
-        // anchor={[focus]}
-        // anchor={[45.5, focus]}
         offset={[5, 15]}>
           <span role="img" aria-label='balloon'>🎈</span>
         </Overlay>
