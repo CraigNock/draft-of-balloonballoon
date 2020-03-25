@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import {ConditionsContext} from './ConditionsContext'
 
+
+//doesn't update: fix
 const LocalWeather = () => {
   const {stateCond} = React.useContext(ConditionsContext);
   const {

@@ -14,13 +14,23 @@ import {ConditionsContext} from './ConditionsContext';
 
 
 const provider = (x, y, z, dpr) =>  {
-  return `https://stamen-tiles.a.ssl.fastly.net/terrain/${z}/${x}/${y}${dpr >= 2 ? '@2x' : ''}.jpg`;
+  return `https://tile.thunderforest.com/pioneer/${z}/${x}/${y}${dpr >= 2 ? '@2x' : ''}.png?apikey=***REMOVED***`;
 };
 const StamenAttribution = () => (
   <span className='map-attribution'>
-    Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.
+    Map tiles by <a href="http://https://www.thunderforest.com/">Thunderforest</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.
   </span>
 )
+
+
+// const provider = (x, y, z, dpr) =>  {
+//   return `https://stamen-tiles.a.ssl.fastly.net/terrain/${z}/${x}/${y}${dpr >= 2 ? '@2x' : ''}.jpg`;
+// };
+// const StamenAttribution = () => (
+//   <span className='map-attribution'>
+//     Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.
+//   </span>
+// )
 
 
 const MapMap = () => {
@@ -76,7 +86,7 @@ const MapMap = () => {
       center={[lat, long]}
       defaultZoom={13}
       minZoom={5}
-      maxZoom={13}//12
+      maxZoom={16}//12
       provider={provider}
       dprs={[1, 2]}
       // width={800}
