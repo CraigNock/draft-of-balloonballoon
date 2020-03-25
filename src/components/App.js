@@ -10,8 +10,6 @@ const App = () => {
     <>
       <GlobalStyles />
       <Homepage />
-      <p>* Weather Dashboard *</p>
-      <p>* Surroundings Dashboard *</p>
       
     </>
   )

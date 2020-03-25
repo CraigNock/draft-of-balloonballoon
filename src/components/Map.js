@@ -42,6 +42,7 @@ const MapMap = () => {
 
   useEffect(() => {
     getWind([state.lat, state.long], changeConditions);
+  // eslint-disable-next-line
   }, [focus]);
 
 
@@ -64,7 +65,7 @@ const MapMap = () => {
     setY(windSum * Math.cos((-(windBearing - 90)) * Math.PI / 180));
     setX(windSum * Math.sin((-(windBearing - 90)) * Math.PI / 180));
     console.log('x ',x,'y ', y);
-    
+// eslint-disable-next-line
   }, [stateCond]);
 
 
@@ -78,7 +79,7 @@ const MapMap = () => {
       provider={provider}
       dprs={[1, 2]}
       // width={800}
-      height={700}
+      // height={700}
       attribution={<StamenAttribution/>}
       onClick={ ({ event, latLng, pixel }) => {
           // console.log('click', latLng, pixel);
@@ -109,12 +110,17 @@ const MapMap = () => {
 }
 
 const MapWrap = styled.div`
-  width: 800px;
-  /* height: 60vh; */
+  width: 70vw;
+  height: 60vh;
+  margin: 0 auto;
+  border: 10px ridge goldenrod;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.53);
+  
 `;
 
 const StyledForm = styled.form`
-
+  display:none;
   input {
     background-color: gray;
     color: white;
