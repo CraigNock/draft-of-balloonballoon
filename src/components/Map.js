@@ -5,6 +5,7 @@ import Map from 'pigeon-maps';
 import Marker from 'pigeon-marker';
 import Overlay from 'pigeon-overlay';
 //tippy for on click marker?
+import balloon from './assets/balloon.svg'
 
 import getWind from './Wind';
 
@@ -89,7 +90,8 @@ const MapMap = () => {
         <Overlay 
         anchor={[lat, long]} 
         offset={[5, 15]}>
-          <span role="img" aria-label='balloon'>🎈</span>
+          {/* <span role="img" aria-label='balloon'>🎈</span> */}
+          <StyledBalloon src={balloon} />
         </Overlay>
 
         <Marker
@@ -116,7 +118,12 @@ const MapWrap = styled.div`
   border: 10px ridge goldenrod;
   border-radius: 10px;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.53);
-  
+  /* opacity:50%; */
+`;
+
+const StyledBalloon = styled.img`
+  height: 1.5rem;
+  width: 1.5rem;
 `;
 
 const StyledForm = styled.form`

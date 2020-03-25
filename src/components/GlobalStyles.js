@@ -66,7 +66,7 @@ export default createGlobalStyle`
 
 .background-wrap {
   background: #87ceeb;
-
+  opacity:90%;
   bottom: 0;
 	left: 0;
 	padding-top: 50px;

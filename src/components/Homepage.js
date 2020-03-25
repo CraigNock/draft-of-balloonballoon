@@ -20,7 +20,7 @@ const Homepage = () => {
 
 const StyledSkyWrap = styled.div`
   /* background: #87ceeb; */
-
+  /* opacity:80%; */
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;

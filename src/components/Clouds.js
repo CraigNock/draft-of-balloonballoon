@@ -15,4 +15,7 @@ const Clouds = () => {
   )
 }
 
+//do css in styled components so can be altered by conditions
+
+
 export default Clouds;
