@@ -13,7 +13,7 @@ app.use(express.json());
 
 const darkGet = async (lat, long) => {
   try{
-    let darkData = await request(`https://api.darksky.net/forecast/***REMOVED***/${lat},${long}?units=si&exclude=minutely,daily,alerts,flags`);
+    let darkData = await request(`https://api.darksky.net/forecast/key/${lat},${long}?units=si&exclude=minutely,daily,alerts,flags`);
     darkData = JSON.parse(darkData);
     // console.log('darkdata', darkData);
     return darkData;
